@@ -25,7 +25,7 @@
       
         .logo {
           font-weight: bold;
-          font-size: 28px;
+          font-size: 28px; 
           color: #f4f812;
           margin-bottom: 5px;
         }
@@ -227,14 +227,16 @@
     </div>
 
     <div class="tabs">
-      <div class="tab active" data-tab="privacy">Privacy Policy</div>
+        <div class="tab active" data-tab="support">Support</div>
+      <div class="tab" data-tab="privacy">Privacy Policy</div>
       <div class="tab" data-tab="terms">Terms of Service</div>
       <div class="tab" data-tab="refund">Refund Policy</div>
       <div class="tab" data-tab="deletion">Data Deletion</div>
     </div>
 
     <div class="legal-container">
-      <div id="privacy-content" class="tab-content active"></div>
+      <div id="support-content" class="tab-content active"></div>
+      <div id="privacy-content" class="tab-content"></div>
       <div id="terms-content" class="tab-content"></div>
       <div id="refund-content" class="tab-content"></div>
       <div id="deletion-content" class="tab-content"></div>
@@ -261,6 +263,22 @@
           <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>.
         </p>
       </div>
+    </div>
+
+    <div id="support-confirmation" class="legal-container" style="display: none">
+        <div style="text-align: center">
+          <div style="color: green; font-size: 48px; margin-bottom: 20px">✓</div>
+          <h1>Message Sent</h1>
+          <p>
+            Thank you for contacting us. We have received your message and will respond shortly.
+          </p>
+          <p>
+            Our team typically responds within 1-2 business days.
+          </p>
+          <p>
+            <button onclick="backToSupport()" style="margin-top: 20px;">Return to Support</button>
+          </p>
+        </div>
     </div>
 
     <div class="footer">
@@ -473,9 +491,97 @@ deletionContent: `
 <h2>Additional Information</h2>
 <p>If you have any questions about your data or the deletion process, please contact us at <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>.</p>
 `,
+
+supportContent: `
+<h2>Customer Support</h2>
+<p>Last updated: March 26, 2025</p>
+
+<h3>1. Ways to Contact Us</h3>
+<p>We're here to help you with any questions or issues related to overloadChamp. Choose the contact method that works best for you:</p>
+
+<ul>
+  <li><strong>Business Inquiries:</strong> <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a></li>
+</ul>
+
+<h3>2. Frequently Asked Questions</h3>
+
+<h4>General Questions</h4>
+
+<p><strong>Q: How do I switch between kg and lbs?</strong></p>
+<p>A: Go to Settings in the app and select your preferred weight unit. The app will automatically convert all your existing data.</p>
+
+<h4>Account Management</h4>
+
+<p><strong>Q: How do I create an account?</strong></p>
+<p>A: You can sign up using your email address or through your Google or Apple account.</p>
+
+<p><strong>Q: I forgot my password, what should I do?</strong></p>
+<p>A: Use the "Forgot Password" link on the login screen to receive password reset instructions via email.</p>
+
+<p><strong>Q: How do I back up my workout data?</strong></p>
+<p>A: Your data is automatically backed up to the cloud when you're connected to the internet.</p>
+
+<h4>Troubleshooting</h4>
+
+<p><strong>Q: The app is crashing, what should I do?</strong></p>
+<p>A: Try these steps:
+<ol>
+  <li>Force close the app and reopen it</li>
+  <li>Restart your device</li>
+  <li>Ensure you have the latest version of the app</li>
+  <li>If problems persist, contact support with details about your device and when the crash occurs</li>
+</ol>
+</p>
+
+<p><strong>Q: Why aren't my weights saving correctly?</strong></p>
+<p>A: Make sure you're pressing the "Complete Workout" button after your session to properly save all data.</p>
+
+<h3>3. Feature Requests</h3>
+<p>We love hearing your ideas! Send feature suggestions to <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>.</p>
+
+<h3>4. Report a Bug</h3>
+<p>If you encounter any issues with the app, please provide the following information:</p>
+<ul>
+  <li>Your device model and operating system version</li>
+  <li>App version (found in Settings)</li>
+  <li>Clear description of the issue</li>
+  <li>Steps to reproduce the problem</li>
+  <li>Screenshots (if applicable)</li>
+</ul>
+
+<h3>5. Contact Form</h3>
+<p>For general inquiries, please fill out the form below and we'll respond as soon as possible:</p>
+
+<form id="support-form" action="https://formspree.io/f/mnnpzkwo" method="POST">
+  <div class="form-group">
+    <label for="support-name">Your Name*</label>
+    <input type="text" id="support-name" name="name" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="support-email">Email Address*</label>
+    <input type="email" id="support-email" name="email" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="support-subject">Subject*</label>
+    <input type="text" id="support-subject" name="subject" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="support-message">Message*</label>
+    <textarea id="support-message" name="message" required></textarea>
+  </div>
+  
+  <button type="submit">Submit</button>
+</form>
+
+<p style="margin-top: 20px; font-size: 14px;">* Required fields</p>
+`,
       };
 
       // Initialize tab content
+      document.getElementById("support-content").innerHTML = legalContent.supportContent;
       document.getElementById("privacy-content").innerHTML =
         legalContent.privacyContent;
       document.getElementById("terms-content").innerHTML =
@@ -511,7 +617,7 @@ deletionContent: `
       // Check for URL hash on page load
       const checkHash = () => {
         const hash = window.location.hash.substring(1);
-        if (hash && ["privacy", "terms", "refund", "deletion"].includes(hash)) {
+        if (hash && ["support", "privacy", "terms", "refund", "deletion"].includes(hash)) {
           document.querySelector(`.tab[data-tab="${hash}"]`).click();
         }
       };
@@ -560,8 +666,54 @@ deletionContent: `
                 });
               });
             }
+
+            // Support form handler
+            const supportForm = document.getElementById("support-form");
+            if (supportForm) {
+              supportForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+            
+                // Basic validation
+                const name = document.getElementById("support-name").value;
+                const email = document.getElementById("support-email").value;
+                const subject = document.getElementById("support-subject").value;
+                const message = document.getElementById("support-message").value;
+            
+                if (!name || !email || !subject || !message) {
+                  alert("Please fill in all required fields.");
+                  return;
+                }
+            
+                // Create form data object
+                const formData = new FormData(supportForm);
+            
+                // Send to Formspree
+                fetch(supportForm.action, {
+                  method: supportForm.method,
+                  body: formData,
+                  headers: {
+                    'Accept': 'application/json'
+                  }
+                })
+                .then(response => {
+                  // Show confirmation page
+                  document.querySelector(".legal-container").style.display = "none";
+                  document.getElementById("support-confirmation").style.display = "block";
+                  supportForm.reset();
+                })
+                .catch(error => {
+                  console.error('Error:', error);
+                  alert("There was an issue submitting your form. Please try again later.");
+                });
+              });
+            }
           }, 500);
         });
+        function backToSupport() {
+          document.getElementById("support-confirmation").style.display = "none";
+          document.querySelector(".legal-container").style.display = "block";
+          document.querySelector(".tab[data-tab='support']").click();
+        }
     </script>
   </body>
 </html>
