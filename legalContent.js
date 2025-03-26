@@ -143,3 +143,55 @@ export const refundContent = `
 <h3>7. Contact Us</h3>
 <p>If you have questions about this Refund Policy, please contact us at contact@webchamploo.com.</p>
 `;
+
+export const deletionContent = `
+<h2>Data Deletion Request</h2>
+<p>Last updated: March 9, 2025</p>
+
+<h2>Account and Data Deletion Policy</h2>
+<p>At overloadChamp, we respect your privacy and data rights. This page explains how to request deletion of your account and associated data from our systems.</p>
+
+<h2>Data We Collect</h2>
+<p>overloadChamp collects and stores the following types of data:</p>
+<ul class="data-list">
+    <li><strong>Account Information:</strong> Email address and authentication details</li>
+    <li><strong>User Preferences:</strong> Weight unit preference (kg/lbs) and app settings</li>
+    <li><strong>Workout Data:</strong> Your custom workouts, exercises, weights, and progress</li>
+</ul>
+
+<h2>Deletion Process</h2>
+<p>To request deletion of your account and data, please complete and submit the form below. We will process your request within 14 days and send a confirmation email when completed.</p>
+
+<h2>Data Retention</h2>
+<p>Upon deletion request, we will:</p>
+<ul class="data-list">
+    <li><strong>Immediately delete:</strong> All workout data, progress history, and personal settings</li>
+    <li><strong>Retain temporarily:</strong> Basic account information and email address for 30 days to prevent accidental deletion and comply with legal requirements</li>
+    <li><strong>Anonymize:</strong> Any usage analytics data by removing all personal identifiers</li>
+</ul>
+
+<h2>Request Data Deletion</h2>
+<form id="deletion-form">
+    <div class="form-group">
+        <label for="email">Email Address (used with overloadChamp)*</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reason">Reason for Deletion (Optional)</label>
+        <textarea id="reason" name="reason"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="confirmation">Please type "DELETE MY DATA" to confirm*</label>
+        <input type="text" id="confirmation" name="confirmation" required>
+    </div>
+    
+    <button type="submit">Submit Deletion Request</button>
+</form>
+
+<p style="margin-top: 20px; font-size: 14px;">* Required fields</p>
+
+<h2>Additional Information</h2>
+<p>If you have any questions about your data or the deletion process, please contact us at <a href="mailto:privacy@overloadchamp.com">privacy@overloadchamp.com</a>.</p>
+`;

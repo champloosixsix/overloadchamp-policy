@@ -1,140 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>overloadChamp Legal</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+          line-height: 1.6;
+          color: #fff;
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #222;
         }
-        
+      
         .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+          text-align: center;
+          margin-bottom: 30px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #333;
         }
-        
+      
         .logo {
-            font-weight: bold;
-            font-size: 24px;
-            color: #000;
+          font-weight: bold;
+          font-size: 28px;
+          color: #f4f812;
+          margin-bottom: 5px;
         }
-        
+      
         .legal-container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 30px;
-            margin-bottom: 40px;
+          background-color: #333;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          padding: 30px;
+          margin-bottom: 40px;
         }
-        
+      
+        h1 {
+          color: #f4f812;
+        }
+      
         h2 {
-            color: #222;
+          color: #f4f812;
+          font-size: 22px;
+          margin-top: 30px;
+          margin-bottom: 15px;
         }
-        
+      
         h3 {
-            margin-top: 25px;
-            color: #444;
+          margin-top: 25px;
+          color: #ddd;
+          font-size: 18px;
         }
-        
+      
+        p {
+          color: #ccc;
+        }
+      
         ul {
-            padding-left: 25px;
+          padding-left: 25px;
+          color: #ccc;
         }
-        
+      
+        a {
+          color: #f4f812;
+          text-decoration: none;
+        }
+      
+        a:hover {
+          text-decoration: underline;
+        }
+      
         .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
+          display: flex;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #444;
         }
-        
+      
         .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 5px;
-            border-radius: 4px 4px 0 0;
-            background-color: #f8f8f8;
+          padding: 10px 20px;
+          cursor: pointer;
+          margin-right: 5px;
+          border-radius: 4px 4px 0 0;
+          background-color: #444;
+          color: #ccc;
+          transition: all 0.2s ease;
         }
-        
+      
+        .tab:hover {
+          background-color: #555;
+        }
+      
         .tab.active {
-            background-color: #333;
-            color: white;
-            font-weight: bold;
+          background-color: #f4f812;
+          color: #222;
+          font-weight: bold;
         }
-        
+      
         .tab-content {
-            display: none;
+          display: none;
         }
-        
+      
         .tab-content.active {
-            display: block;
+          display: block;
         }
-        
+      
         .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 14px;
-            color: #666;
+          text-align: center;
+          margin-top: 50px;
+          padding-top: 20px;
+          border-top: 1px solid #333;
+          font-size: 14px;
+          color: #999;
         }
-        
+      
+        .form-group {
+          margin-bottom: 20px;
+        }
+      
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: bold;
+          color: #ddd;
+        }
+      
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #444;
+          border-radius: 4px;
+          font-size: 16px;
+          background-color: #444;
+          color: #fff;
+        }
+      
+        input:focus,
+        textarea:focus {
+          outline: none;
+          border-color: #f4f812;
+        }
+      
+        textarea {
+          height: 100px;
+          resize: vertical;
+        }
+      
+        button {
+          background-color: #f4f812;
+          color: #222;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: bold;
+          transition: background-color 0.2s;
+        }
+      
+        button:hover {
+          background-color: #e0e400;
+        }
+      
+        .data-list {
+          margin: 20px 0;
+          padding-left: 20px;
+        }
+      
+        .data-list li {
+          margin-bottom: 10px;
+          color: #ccc;
+        }
+      
+        strong {
+          color: #fff;
+          font-weight: bold;
+        }
+      
         @media (max-width: 600px) {
-            body {
-                padding: 15px;
-            }
-            
-            .legal-container {
-                padding: 20px;
-            }
-            
-            .tabs {
-                flex-direction: column;
-            }
-            
-            .tab {
-                margin-bottom: 5px;
-                text-align: center;
-            }
+          body {
+            padding: 15px;
+          }
+      
+          .legal-container {
+            padding: 20px;
+          }
+      
+          .tabs {
+            flex-direction: column;
+          }
+      
+          .tab {
+            margin-bottom: 5px;
+            text-align: center;
+            border-radius: 4px;
+          }
         }
-    </style>
-</head>
-<body>
+      
+        /* Confirmation page styling */
+        #deletion-confirmation {
+          text-align: center;
+          background-color: #333;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          padding: 40px 30px;
+        }
+      
+        #deletion-confirmation h1 {
+          color: #f4f812;
+          margin-bottom: 20px;
+        }
+      
+        #deletion-confirmation p {
+          color: #ccc;
+          margin-bottom: 15px;
+        }
+      </style>
+  </head>
+  <body>
     <div class="header">
-        <div class="logo">overloadChamp</div>
-        <p>Legal Documents</p>
+      <div class="logo">overloadChamp</div>
+      <p>Legal Documents</p>
     </div>
-    
+
     <div class="tabs">
-        <div class="tab active" data-tab="privacy">Privacy Policy</div>
-        <div class="tab" data-tab="terms">Terms of Service</div>
-        <div class="tab" data-tab="refund">Refund Policy</div>
+      <div class="tab active" data-tab="privacy">Privacy Policy</div>
+      <div class="tab" data-tab="terms">Terms of Service</div>
+      <div class="tab" data-tab="refund">Refund Policy</div>
+      <div class="tab" data-tab="deletion">Data Deletion</div>
     </div>
-    
+
     <div class="legal-container">
-        <div id="privacy-content" class="tab-content active"></div>
-        <div id="terms-content" class="tab-content"></div>
-        <div id="refund-content" class="tab-content"></div>
+      <div id="privacy-content" class="tab-content active"></div>
+      <div id="terms-content" class="tab-content"></div>
+      <div id="refund-content" class="tab-content"></div>
+      <div id="deletion-content" class="tab-content"></div>
     </div>
-    
+
+    <div
+      id="deletion-confirmation"
+      class="legal-container"
+      style="display: none"
+    >
+      <div style="text-align: center">
+        <div style="color: green; font-size: 48px; margin-bottom: 20px">✓</div>
+        <h1>Request Received</h1>
+        <p>
+          Thank you for your submission. We have received your request to delete
+          your overloadChamp account and associated data.
+        </p>
+        <p>
+          We will process your request within 14 days and send a confirmation
+          email when completed.
+        </p>
+        <p>
+          If you have any questions, please contact us at
+          <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>.
+        </p>
+      </div>
+    </div>
+
     <div class="footer">
-        &copy; <span id="current-year"></span> webChamploo. All rights reserved.
-        <p>For questions, contact: <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a></p>
+      &copy; <span id="current-year"></span> webChamploo. All rights reserved.
+      <p>
+        For questions, contact:
+        <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>
+      </p>
     </div>
 
     <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Legal content
-        const legalContent = {
-            privacyContent: `
+      // Set current year in footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      // Legal content
+      const legalContent = {
+        privacyContent: `
 <h2>Privacy Policy</h2>
 <p>Last updated: March 9, 2025</p>
 
@@ -197,7 +341,7 @@
 <h3>9. Contact Us</h3>
 <p>If you have questions about this Privacy Policy, please contact us at contact@webchamploo.com.</p>
 `,
-            termsContent: `
+        termsContent: `
 <h2>Terms of Service</h2>
 <p>Last updated: March 9, 2025</p>
 
@@ -242,7 +386,7 @@
 <h3>11. Contact Us</h3>
 <p>If you have any questions about these Terms, please contact us at legal@webchamploo.com.</p>
 `,
-            refundContent: `
+        refundContent: `
 <h2>Refund Policy</h2>
 <p>Last updated: March 9, 2025</p>
 
@@ -276,44 +420,148 @@
 
 <h3>7. Contact Us</h3>
 <p>If you have questions about this Refund Policy, please contact us at contact@webchamploo.com.</p>
-`
-        };
-        
-        // Initialize tab content
-        document.getElementById('privacy-content').innerHTML = legalContent.privacyContent;
-        document.getElementById('terms-content').innerHTML = legalContent.termsContent;
-        document.getElementById('refund-content').innerHTML = legalContent.refundContent;
-        
-        // Tab switching functionality
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Remove active class from all tabs and content
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab
-                this.classList.add('active');
-                
-                // Show corresponding content
-                const tabName = this.getAttribute('data-tab');
-                document.getElementById(`${tabName}-content`).classList.add('active');
-                
-                // Update URL hash for direct linking
-                window.location.hash = tabName;
-            });
+`,
+
+deletionContent: `
+<h2>Data Deletion Request</h2>
+<p>Last updated: March 9, 2025</p>
+
+<h2>Account and Data Deletion Policy</h2>
+<p>At overloadChamp, we respect your privacy and data rights. This page explains how to request deletion of your account and associated data from our systems.</p>
+
+<h2>Data We Collect</h2>
+<p>overloadChamp collects and stores the following types of data:</p>
+<ul class="data-list">
+    <li><strong>Account Information:</strong> Email address and authentication details</li>
+    <li><strong>User Preferences:</strong> Weight unit preference (kg/lbs) and app settings</li>
+    <li><strong>Workout Data:</strong> Your custom workouts, exercises, weights, and progress</li>
+</ul>
+
+<h2>Deletion Process</h2>
+<p>To request deletion of your account and data, please complete and submit the form below. We will process your request within 14 days and send a confirmation email when completed.</p>
+
+<h2>Data Retention</h2>
+<p>Upon deletion request, we will:</p>
+<ul class="data-list">
+    <li><strong>Immediately delete:</strong> All workout data, progress history, and personal settings</li>
+    <li><strong>Retain temporarily:</strong> Basic account information and email address for 30 days to prevent accidental deletion and comply with legal requirements</li>
+    <li><strong>Anonymize:</strong> Any usage analytics data by removing all personal identifiers</li>
+</ul>
+
+<h2>Request Data Deletion</h2>
+<form id="deletion-form" action="https://formspree.io/f/mnnpzkwo" method="POST">
+    <div class="form-group">
+        <label for="email">Email Address (used with overloadChamp)*</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reason">Reason for Deletion (Optional)</label>
+        <textarea id="reason" name="reason"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="confirmation">Please type "DELETE MY DATA" to confirm*</label>
+        <input type="text" id="confirmation" name="confirmation" required>
+    </div>
+    
+    <button type="submit">Submit Deletion Request</button>
+</form>
+
+<p style="margin-top: 20px; font-size: 14px;">* Required fields</p>
+
+<h2>Additional Information</h2>
+<p>If you have any questions about your data or the deletion process, please contact us at <a href="mailto:contact@webchamploo.com">contact@webchamploo.com</a>.</p>
+`,
+      };
+
+      // Initialize tab content
+      document.getElementById("privacy-content").innerHTML =
+        legalContent.privacyContent;
+      document.getElementById("terms-content").innerHTML =
+        legalContent.termsContent;
+      document.getElementById("refund-content").innerHTML =
+        legalContent.refundContent;
+      document.getElementById("deletion-content").innerHTML =
+        legalContent.deletionContent;
+
+      // Tab switching functionality
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          // Remove active class from all tabs and content
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked tab
+          this.classList.add("active");
+
+          // Show corresponding content
+          const tabName = this.getAttribute("data-tab");
+          document.getElementById(`${tabName}-content`).classList.add("active");
+
+          // Update URL hash for direct linking
+          window.location.hash = tabName;
         });
-        
-        // Check for URL hash on page load
-        const checkHash = () => {
-            const hash = window.location.hash.substring(1);
-            if (hash && ['privacy', 'terms', 'refund'].includes(hash)) {
-                document.querySelector(`.tab[data-tab="${hash}"]`).click();
+      });
+
+      // Check for URL hash on page load
+      const checkHash = () => {
+        const hash = window.location.hash.substring(1);
+        if (hash && ["privacy", "terms", "refund", "deletion"].includes(hash)) {
+          document.querySelector(`.tab[data-tab="${hash}"]`).click();
+        }
+      };
+
+      // Check hash on page load
+      window.addEventListener("load", checkHash);
+      window.addEventListener("hashchange", checkHash);
+
+      document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            // We need to wait for the content to be rendered
+            const form = document.getElementById("deletion-form");
+            if (form) {
+              form.addEventListener("submit", function (e) {
+                e.preventDefault();
+            
+                // Get form values
+                const email = document.getElementById("email").value;
+                const confirmation = document.getElementById("confirmation").value;
+            
+                // Basic validation
+                if (!email || confirmation !== "DELETE MY DATA") {
+                  alert("Please fill in all required fields correctly.");
+                  return;
+                }
+            
+                // Create form data object
+                const formData = new FormData(form);
+
+                // Send to Formspree
+                fetch(form.action, {
+                  method: form.method,
+                  body: formData,
+                  headers: {
+                    'Accept': 'application/json'
+                  }
+                })
+                .then(response => {
+                  // Show confirmation regardless of response
+                  document.querySelector(".legal-container").style.display = "none";
+                  document.getElementById("deletion-confirmation").style.display = "block";
+                })
+                .catch(error => {
+                  console.error('Error:', error);
+                  alert("There was an issue submitting your request. Please try again later.");
+                });
+              });
             }
-        };
-        
-        // Check hash on page load
-        window.addEventListener('load', checkHash);
-        window.addEventListener('hashchange', checkHash);
+          }, 500);
+        });
     </script>
-</body>
+  </body>
 </html>
