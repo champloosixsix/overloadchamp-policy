@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overloadChamp - Data Deletion Request</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        h1 {
+            color: #000;
+        }
+        h2 {
+            color: #444;
+            margin-top: 30px;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        .data-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .data-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>overloadChamp Data Deletion Request</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Account and Data Deletion Policy</h2>
+        <p>At overloadChamp, we respect your privacy and data rights. This page explains how to request deletion of your account and associated data from our systems.</p>
+        
+        <h2>Data We Collect</h2>
+        <p>overloadChamp collects and stores the following types of data:</p>
+        <ul class="data-list">
+            <li><strong>Account Information:</strong> Email address and authentication details</li>
+            <li><strong>User Preferences:</strong> Weight unit preference (kg/lbs) and app settings</li>
+            <li><strong>Workout Data:</strong> Your custom workouts, exercises, weights, and progress</li>
+        </ul>
+        
+        <h2>Deletion Process</h2>
+        <p>To request deletion of your account and data, please complete and submit the form below. We will process your request within 14 days and send a confirmation email when completed.</p>
+        
+        <h2>Data Retention</h2>
+        <p>Upon deletion request, we will:</p>
+        <ul class="data-list">
+            <li><strong>Immediately delete:</strong> All workout data, progress history, and personal settings</li>
+            <li><strong>Retain temporarily:</strong> Basic account information and email address for 30 days to prevent accidental deletion and comply with legal requirements</li>
+            <li><strong>Anonymize:</strong> Any usage analytics data by removing all personal identifiers</li>
+        </ul>
+        
+        <h2>Request Data Deletion</h2>
+        <form action="process_deletion.php" method="post">
+            <div class="form-group">
+                <label for="email">Email Address (used with overloadChamp)*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="reason">Reason for Deletion (Optional)</label>
+                <textarea id="reason" name="reason"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmation">Please type "DELETE MY DATA" to confirm*</label>
+                <input type="text" id="confirmation" name="confirmation" required>
+            </div>
+            
+            <button type="submit">Submit Deletion Request</button>
+        </form>
+        
+        <p style="margin-top: 20px; font-size: 14px;">* Required fields</p>
+        
+        <h2>Additional Information</h2>
+        <p>If you have any questions about your data or the deletion process, please contact us at <a href="mailto:privacy@overloadchamp.com">privacy@overloadchamp.com</a>.</p>
+    </div>
+</body>
+</html>
